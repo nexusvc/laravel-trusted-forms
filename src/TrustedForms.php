@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace BayAreaWebPro\TrustedForms;
 
@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Facade;
 
 /**
  * @see \BayAreaWebPro\TrustedForms\TrustedFormsService
- * @method static TrustedFormsService make(array $data = [])
+ * @method static Fingerprint capture(array $data = [])
  */
 class TrustedForms extends Facade
 {

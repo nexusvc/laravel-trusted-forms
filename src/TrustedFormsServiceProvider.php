@@ -11,7 +11,11 @@ class TrustedFormsServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        $this->publishes([
+            __DIR__.'/../config/config.php' => config_path('trusted-forms.php'),
+        ], 'config');
 
+        $this->mergeConfigFrom(__DIR__.'/../config/config.php','trusted-forms');
     }
 
     /**

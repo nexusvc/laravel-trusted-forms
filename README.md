@@ -23,7 +23,7 @@ Laravel Trusted Forms...WIP
 ```php
 use BayAreaWebPro\TrustedForms\TrustedForms;
 
-$certificate = TrustedForms::make(session('lead', []), [
-    ...
-]);
+$fingerPrint = TrustedForms::capture([...]);
+$fingerPrint->get('my.nested.field');
+$fingerPrint->certificateUrl();
 ```
