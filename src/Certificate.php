@@ -11,7 +11,7 @@ class Certificate extends ApiResponse
      * Get Certificate URLs
      * @return Collection
      */
-    public function certificateUrls(): Collection
+    public function getCertificateUrls(): Collection
     {
         return $this->collect('claims')->pluck('masked_cert_url');
     }

@@ -21,7 +21,7 @@ class CertificateTest extends TestCase
         );
 
         $this->assertInstanceOf(
-            Collection::class,$certificate->certificateUrls(),
+            Collection::class,$certificate->getCertificateUrls(),
             "Certificate URLs are collection."
         );
 

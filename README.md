@@ -41,6 +41,7 @@ $claim->get('nested.key', 'fallback-values');
 use BayAreaWebPro\TrustedForms\TrustedForms;
 
 $certificate = TrustedForms::readCertificate($token);
+$certificate->getCertificateUrls();
 $certificate->hasValidExpiration();
 $certificate->hasValidClaims();
 $certificate->isValid();
