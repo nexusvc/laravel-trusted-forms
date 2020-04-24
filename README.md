@@ -18,6 +18,7 @@ composer require bayareawebpro/laravel-trusted-forms
 
 Laravel Trusted Forms...WIP
 
+--- 
 
 ## Usage: 
 ```php
@@ -27,3 +28,8 @@ $fingerPrint = TrustedForms::capture([...]);
 $fingerPrint->get('my.nested.field');
 $fingerPrint->certificateUrl();
 ```
+
+--- 
+
+## TrustedForm Documentation
+https://support.activeprospect.com/hc/en-us/categories/200128909-TrustedForm
