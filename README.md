@@ -1,5 +1,8 @@
 # Laravel Trusted Forms
 
+A service wrapper for the Laravel HTTP client designed for working with the Active Prospect API to generate "TCPA Compliant Trusted Form Certificates".
+
+> This is an Open Source Community Project and is not affiliated with ActiveProspect or affiliates.
 
 ![](https://github.com/bayareawebpro/laravel-trusted-forms/workflows/ci/badge.svg)
 ![](https://img.shields.io/packagist/dt/bayareawebpro/laravel-trusted-forms.svg)
