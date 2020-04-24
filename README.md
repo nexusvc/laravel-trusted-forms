@@ -31,6 +31,6 @@ $fingerPrint->certificateUrl();
 
 ## TrustedForm Documentation
 
-> This is an Open Source Community Project and is not affiliated with ActiveProspect, or it's affiliates.
+> This is an Open Source Community Project and is not provided by ActiveProspect, or it's affiliates.
 
 https://support.activeprospect.com/hc/en-us/categories/200128909-TrustedForm
