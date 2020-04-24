@@ -29,6 +29,9 @@ $claim->hasValidCertificate();
 $claim->hasValidExpiration();
 $claim->hasValidClaims();
 $claim->isValid();
+
+$claim->collect('nested.array');
+$claim->get('nested.key', 'fallback-values');
 ```
 
 ## Read Certificate: 
@@ -40,6 +43,9 @@ $certificate = TrustedForms::readCertificate($token);
 $certificate->hasValidExpiration();
 $certificate->hasValidClaims();
 $certificate->isValid();
+
+$certificate->collect('nested.array');
+$certificate->get('nested.key', 'fallback-values');
 ```
 
 --- 
