@@ -2,16 +2,16 @@
 return [
     /*
     |--------------------------------------------------------------------------
-    | Fingerprint Calculation Endpoint
+    | TrustedForm Endpoint
     |--------------------------------------------------------------------------
+    | https://support.activeprospect.com/hc/en-us/articles/201325449
+    | https://support.activeprospect.com/hc/en-us/articles/201325439
     |
     | TrustedForm will calculate the fingerprints on your behalf when you pass
     | some basic lead data in the capture method. TrustedForm will evaluate the
     | included data and calculate SHA1 hashes of any phone numbers and
     | email addresses, discarding the lead data once the hash is calculated.
     |
-    | https://support.activeprospect.com/hc/en-us/articles/201325449
-    | https://support.activeprospect.com/hc/en-us/articles/201325439
     */
     'api_url' => env('TRUSTEDFORMS_API_URL', ''),
     'api_user' => env('TRUSTEDFORMS_API_USER', 'API'),
