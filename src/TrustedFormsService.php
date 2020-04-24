@@ -3,7 +3,7 @@
 namespace BayAreaWebPro\TrustedForms;
 
 use Illuminate\Contracts\Config\Repository as Config;
-use Illuminate\Support\Facades\Http;
+use Illuminate\Http\Client\PendingRequest as Client;
 
 class TrustedFormsService
 {
@@ -13,12 +13,18 @@ class TrustedFormsService
     protected Config $config;
 
     /**
+     * The Http client.
+     */
+    protected Client $client;
+
+    /**
      * TrustedFormsService constructor.
      * @param Config $config
      */
-    public function __construct(Config $config)
+    public function __construct(Config $config, Client $client)
     {
         $this->config = $config;
+        $this->client = $client;
     }
 
     /**
@@ -38,7 +44,8 @@ class TrustedFormsService
     public function claimCertificate(array $data): Claim
     {
         return new Claim(
-            Http::asJson()
+            $this->client
+                ->asJson()
                 ->retry($this->getApiRetryTimes(),$this->getApiRetryDelay())
                 ->withBasicAuth($this->getApiUser(), $this->getApiKey())
                 ->post($this->getApiUrl(),$data)
@@ -56,7 +63,7 @@ class TrustedFormsService
     public function readCertificate(string $token): Certificate
     {
         return new Certificate(
-            Http::asJson()
+            $this->client
                 ->retry($this->getApiRetryTimes(),$this->getApiRetryDelay())
                 ->withBasicAuth($this->getApiUser(), $this->getApiKey())
                 ->get($this->getApiUrl($token))
