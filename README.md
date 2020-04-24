@@ -14,8 +14,6 @@ composer require bayareawebpro/laravel-trusted-forms
 
 > https://packagist.org/packages/bayareawebpro/laravel-trusted-forms
 
-Laravel Trusted Forms...WIP
-
 --- 
 
 ## Claim Certificate: 
