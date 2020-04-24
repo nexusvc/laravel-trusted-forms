@@ -18,13 +18,28 @@ Laravel Trusted Forms...WIP
 
 --- 
 
-## Usage: 
+## Claim Certificate: 
 ```php
 use BayAreaWebPro\TrustedForms\TrustedForms;
 
-$fingerPrint = TrustedForms::capture([...]);
-$fingerPrint->get('my.nested.field');
-$fingerPrint->certificateUrl();
+$claim = TrustedForms::claimCertificate(request()->only([...]));
+$claim->getMaskedCertificateUrl();
+$claim->getCertificateToken();
+$claim->hasValidCertificate();
+$claim->hasValidExpiration();
+$claim->hasValidClaims();
+$claim->isValid();
+```
+
+## Read Certificate: 
+
+```php
+use BayAreaWebPro\TrustedForms\TrustedForms;
+
+$certificate = TrustedForms::readCertificate($token);
+$certificate->hasValidExpiration();
+$certificate->hasValidClaims();
+$certificate->isValid();
 ```
 
 --- 

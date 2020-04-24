@@ -15,9 +15,7 @@ class ClaimTest extends TestCase
     {
         Http::fake(fn($request) => Http::response($this->jsonFixture('claim-valid.json'), 201));
 
-        $trustedForm = TrustedForms::make();
-
-        $claim = $trustedForm->claimCertificate([]);
+        $claim = TrustedForms::claimCertificate([]);
 
         $this->assertInstanceOf(Claim::class, $claim);
         $this->assertIsString($claim->getCertificateToken());
@@ -53,8 +51,7 @@ class ClaimTest extends TestCase
     {
         Http::fake(fn($request) => Http::response($this->jsonFixture('claim-invalid.json'), 201));
 
-        $trustedForm = TrustedForms::make();
-        $claim = $trustedForm->claimCertificate([]);
+        $claim = TrustedForms::claimCertificate([]);
 
         $this->assertFalse(
             $claim->hasValidExpiration(),

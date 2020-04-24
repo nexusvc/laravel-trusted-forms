@@ -14,9 +14,7 @@ class CertificateTest extends TestCase
     {
         Http::fake(fn($request) => Http::response($this->jsonFixture('certificate-valid.json'), 200));
 
-        $trustedForm = TrustedForms::make();
-
-        $certificate = $trustedForm->readCertificate('XXX');
+        $certificate = TrustedForms::readCertificate('XXX');
 
         $this->assertInstanceOf(
             Certificate::class, $certificate,
@@ -54,8 +52,7 @@ class CertificateTest extends TestCase
 
         Http::fake(fn($request) => Http::response($this->jsonFixture('certificate-invalid.json'), 200));
 
-        $trustedForm = TrustedForms::make();
-        $certificate = $trustedForm->readCertificate('XXX');
+        $certificate = TrustedForms::readCertificate('XXX');
 
         $this->assertFalse(
             $certificate->hasValidExpiration(),
