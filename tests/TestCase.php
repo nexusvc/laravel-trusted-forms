@@ -14,11 +14,11 @@ abstract class TestCase extends BaseTestCase
         return [TrustedFormsServiceProvider::class];
     }
 
-    /**
-     * Load package alias
-     * @param \Illuminate\Foundation\Application $app
-     * @return array
-     */
+    public function jsonFixture(string $filename): array
+    {
+        return json_decode(file_get_contents(__DIR__."/Fixtures/$filename"), true);
+    }
+
     protected function getPackageAliases($app)
     {
         return [

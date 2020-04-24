@@ -1,0 +1,66 @@
+{
+    "id": "51ddbe9d82d28b8d38000009",
+    "age": 10,
+    "page_id": "51de277782d28be89900008a",
+    "warnings": [],
+    "reference": "ABC123",
+    "vendor": "SuperInstantLeads",
+    "fingerprints": {
+        "matching": [
+            "03685a113a7bf67d146c05d2165c9fccbfd02719"
+        ],
+        "non_matching": [
+            "c0c686d4b4c680347df82742250093bbbf361b3b"
+        ]
+    },
+    "created_at": "2013-07-10T20:05:49Z",
+    "expires_at": "2013-08-09T20:05:49Z",
+    "masked": false,
+    "masked_cert_url": "http://cert.trustedform.com/8189d5a77937b27a3d85ca181fc34f2b46a60908",
+    "cert": {
+        "token": "8189d5a77937b27a3d85ca181fc34f2b46a60908",
+        "ip": "76.253.76.139",
+        "location": "http://activeprospect.hostedwebform.com/contact-us?<query string hidden>",
+        "parent_location": "http://www.activeprospect.com/contact-us.php",
+        "framed": true,
+        "browser": "Safari 6.0.5",
+        "operating_system": "OS X 10.8",
+        "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_4) AppleWebKit/536.30.1 (KHTML, like Gecko) Version/6.0.5 Safari/536.30.1",
+        "created_at": "2013-07-10T02:10:50Z",
+        "expires_at": "2013-07-13T02:10:50Z",
+        "geo": {
+            "lat": 30.2672,
+            "lon": -97.7431,
+            "city": "Austin",
+            "state": "TX",
+            "postal_code": "78703",
+            "country_code": "US",
+            "time_zone": "America/Chicago"
+        },
+        "event_duration":10545,
+        "claims": [
+            {
+                "id": "51ddbe9d82d28b8d38000009",
+                "page_id": "51de277782d28be89900008a",
+                "age": 7,
+                "reference": "ABC123",
+                "vendor": "SuperInstantLeads",
+                "created_at": "2050-07-10T20:05:49Z",
+                "expires_at": "2050-08-09T20:05:49Z",
+                "fingerprints": {
+                    "matching": [
+                        "03685a113a7bf67d146c05d2165c9fccbfd02719"
+                    ],
+                    "non_matching": [
+                        "c0c686d4b4c680347df82742250093bbbf361b3b"
+                    ]
+                },
+                "scans": {
+                    "found": ["How did you hear about us", "First Name"],
+                    "not_found": []
+                },
+                "warnings": ["string found in snapshot"]
+            }
+        ]
+    }
+}

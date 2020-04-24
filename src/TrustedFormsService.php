@@ -18,16 +18,6 @@ class TrustedFormsService
     protected Config $config;
 
     /**
-     * Make TrustedFormsService & Capture Fingerprint.
-     * @param array $data
-     * @return mixed
-     */
-    public static function capture(array $data = []): Fingerprint
-    {
-        return app(static::class, compact('data'))->toFingerprint();
-    }
-
-    /**
      * TrustedFormsService constructor.
      * @param Config $config
      * @param array $data
@@ -39,15 +29,44 @@ class TrustedFormsService
     }
 
     /**
-     * Generate Fingerprint from Data
+     * Make TrustedFormsService & Capture Fingerprint.
+     * @return self
      */
-    public function toFingerprint(): Fingerprint
+    public static function make(): self
     {
-        return new Fingerprint(
+        return app(static::class);
+    }
+
+    /**
+     * Generate Fingerprint from Data
+     * @param array $data
+     * @return Claim
+     */
+    public function claimCertificate(array $data): Claim
+    {
+        return new Claim(
             Http::asJson()
                 ->retry($this->getApiRetryTimes(),$this->getApiRetryDelay())
                 ->withBasicAuth($this->getApiUser(), $this->getApiKey())
-                ->post($this->getApiUrl(), $this->data)
+                ->post($this->getApiUrl(),$data)
+                ->json()
+        );
+    }
+
+    /**
+     * Retrieve Certificate Details
+     * A certificate may only be retrieved after it has been claimed.
+     * Attempting to retrieve an unclaimed certificate will result in an HTTP 404 response.
+     * @param string $token
+     * @return Certificate
+     */
+    public function readCertificate(string $token): Certificate
+    {
+        return new Certificate(
+            Http::asJson()
+                ->retry($this->getApiRetryTimes(),$this->getApiRetryDelay())
+                ->withBasicAuth($this->getApiUser(), $this->getApiKey())
+                ->get($this->getApiUrl($token))
                 ->json()
         );
     }
@@ -70,10 +89,12 @@ class TrustedFormsService
 
     /**
      * Get the API URL.
+     * @param array $segments
+     * @return string
      */
-    protected function getApiUrl(): string
+    protected function getApiUrl(...$segments): string
     {
-        return $this->config->get('trusted-forms.api_url', '');
+        return join('/',array_merge([$this->config->get('trusted-forms.api_url', '')],$segments));
     }
 
     /**

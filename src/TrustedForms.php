@@ -6,7 +6,9 @@ use Illuminate\Support\Facades\Facade;
 
 /**
  * @see \BayAreaWebPro\TrustedForms\TrustedFormsService
- * @method static Fingerprint capture(array $data = [])
+ * @method static Certificate readCertificate(string $token)
+ * @method static Claim claimCertificate(array $data)
+ * @method static TrustedFormsService make()
  */
 class TrustedForms extends Facade
 {
