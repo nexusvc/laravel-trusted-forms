@@ -89,7 +89,7 @@ class TrustedFormsService
 
     /**
      * Get the API URL.
-     * @param array $segments
+     * @param array<int, mixed> $segments
      * @return string
      */
     protected function getApiUrl(...$segments): string

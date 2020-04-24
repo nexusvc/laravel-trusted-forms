@@ -17,16 +17,33 @@ class Certificate extends ApiResponse
     }
 
     /**
-     * Has Valid Claims
+     * Is Valid
      * @return bool
      */
     public function isValid(): bool
     {
+        return $this->hasValidExpiration() && $this->hasValidClaims();
+    }
+
+    /**
+     * Has Valid Certificate
+     * @return bool
+     */
+    public function hasValidExpiration(): bool
+    {
+        return Carbon::parse($this->get('expires_at', Carbon::now()))->greaterThan(Carbon::now());
+    }
+
+    /**
+     * Has Valid Claims
+     * @return bool
+     */
+    public function hasValidClaims(): bool
+    {
         return $this
-            ->collect('claims')
-            ->pluck('expires_at')
-            ->reject(fn($timestamp)=>Carbon::createFromTimestamp($timestamp)->greaterThan(Carbon::now()))
-            ->count() > 0
-            ;
+                ->collect('claims')
+                ->pluck('expires_at')
+                ->filter(fn($timestamp) => Carbon::parse($timestamp)->greaterThan(Carbon::now()))
+                ->count() > 0;
     }
 }

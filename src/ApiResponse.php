@@ -24,8 +24,8 @@ abstract class ApiResponse implements Arrayable
     /**
      * Get Data Value
      * @param string $field
-     * @param null $fallback
-     * @return array|string|float|int|bool
+     * @param mixed $fallback
+     * @return mixed
      */
     public function get(string $field, $fallback = null)
     {
