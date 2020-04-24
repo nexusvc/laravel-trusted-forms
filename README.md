@@ -10,6 +10,7 @@ A service wrapper for the Laravel HTTP client designed for working with the Acti
 
 ```shell script
 composer require bayareawebpro/laravel-trusted-forms
+php artisan vendor:publish --tag=config
 ```
 
 > https://packagist.org/packages/bayareawebpro/laravel-trusted-forms
