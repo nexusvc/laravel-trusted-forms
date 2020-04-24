@@ -8,11 +8,6 @@ use Illuminate\Support\Facades\Http;
 class TrustedFormsService
 {
     /**
-     * The data to be certified.
-     */
-    protected array $data;
-
-    /**
      * The config repository.
      */
     protected Config $config;
@@ -20,12 +15,10 @@ class TrustedFormsService
     /**
      * TrustedFormsService constructor.
      * @param Config $config
-     * @param array $data
      */
-    public function __construct(Config $config, array $data = [])
+    public function __construct(Config $config)
     {
         $this->config = $config;
-        $this->data = $data;
     }
 
     /**
