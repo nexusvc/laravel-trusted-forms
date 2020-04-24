@@ -2,11 +2,11 @@
 
 namespace BayAreaWebPro\TrustedForms\Tests\Unit;
 
+use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Http;
 use BayAreaWebPro\TrustedForms\Certificate;
 use BayAreaWebPro\TrustedForms\TrustedForms;
 use BayAreaWebPro\TrustedForms\Tests\TestCase;
-use Illuminate\Support\Collection;
-use Illuminate\Support\Facades\Http;
 
 class CertificateTest extends TestCase
 {

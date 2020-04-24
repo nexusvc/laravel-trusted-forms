@@ -2,12 +2,10 @@
 
 namespace BayAreaWebPro\TrustedForms\Tests\Unit;
 
+use Illuminate\Support\Facades\Http;
 use BayAreaWebPro\TrustedForms\Claim;
-use BayAreaWebPro\TrustedForms\Certificate;
 use BayAreaWebPro\TrustedForms\TrustedForms;
 use BayAreaWebPro\TrustedForms\Tests\TestCase;
-use Illuminate\Support\Collection;
-use Illuminate\Support\Facades\Http;
 
 class ClaimTest extends TestCase
 {
@@ -19,6 +17,7 @@ class ClaimTest extends TestCase
 
         $this->assertInstanceOf(Claim::class, $claim);
         $this->assertIsString($claim->getCertificateToken());
+        $this->assertIsString($claim->getMaskedCertificateUrl());
 
         $this->assertSame(
             'fallback-value',
