@@ -1,25 +1,25 @@
 {
-    "name": "nexusvc/laravel-trusted-forms",
-    "description": "A Trusted Forms Certificate Client - L5",
+    "name": "bayareawebpro/laravel-trusted-forms",
+    "description": "A Trusted Forms Certificate Client",
     "keywords": ["bayareawebpro", "laravel-trusted-forms"],
-    "homepage": "https://github.com/nexusvc/laravel-trusted-forms",
+    "homepage": "https://github.com/bayareawebpro/laravel-trusted-forms",
     "license": "MIT",
     "type": "library",
     "authors": [
         {
-            "name": "nexusvc",
-            "email": "development@leadtrust.io",
+            "name": "Dan Alvidrez",
+            "email": "dan@bayareawebpro.com",
             "role": "Developer"
         }
     ],
     "require": {
-        "php": "^7.2",
+        "php": "^7.4",
         "ext-json": "*",
-        "guzzlehttp/guzzle": "^6.0",
-        "illuminate/config": "^5.2",
-        "illuminate/http": "^5.2",
-        "illuminate/support": "^5.2",
-        "illuminate/container": "^5.2",
+        "guzzlehttp/guzzle": "^6.5",
+        "illuminate/config": "^7.0",
+        "illuminate/http": "^7.0",
+        "illuminate/support": "^7.0",
+        "illuminate/container": "^7.0",
         "nesbot/carbon": "^2.32"
     },
     "require-dev": {
